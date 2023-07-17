@@ -1,0 +1,1 @@
+import{_ as t,o as a,d as c,D as o}from"./chunk-dfeee05c.js";const n={name:"VacancyCategory",props:{type:{type:String,required:!0}}},s={class:"vacancy-category"};function _(r,p,e,y,d,i){return a(),c("div",s,o(e.type),1)}const g=t(n,[["render",_],["__scopeId","data-v-30805fb4"]]);export{g as V};

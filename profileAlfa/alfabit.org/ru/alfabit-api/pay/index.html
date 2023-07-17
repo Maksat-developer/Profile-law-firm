@@ -1,0 +1,1498 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the AlfaBit Pay API"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="index.html#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-pay.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="index.html#" data-language-name="shell">shell</a>
+              <a href="index.html#" data-language-name="python">python</a>
+              <a href="index.html#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="index.html#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="index.html#2022-12-12" class="toc-h2 toc-link" data-title="2022-12-12">2022-12-12</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="index.html#faq" class="toc-h1 toc-link" data-title="FAQ">FAQ</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="index.html#alfabit-pay" class="toc-h2 toc-link" data-title="Что такое AlfaBit.Pay?">Что такое AlfaBit.Pay?</a>
+                  </li>
+                  <li>
+                    <a href="index.html#alfabit-pay-2" class="toc-h2 toc-link" data-title="Как работает AlfaBit.Pay?">Как работает AlfaBit.Pay?</a>
+                  </li>
+                  <li>
+                    <a href="index.html#ef0bff9c34" class="toc-h2 toc-link" data-title="Как долго обрабатывается транзакция?">Как долго обрабатывается транзакция?</a>
+                  </li>
+                  <li>
+                    <a href="index.html#6640d5e2e8" class="toc-h2 toc-link" data-title="Что такое хэш транзакции?">Что такое хэш транзакции?</a>
+                  </li>
+                  <li>
+                    <a href="index.html#c33171beef" class="toc-h2 toc-link" data-title="Можно ли в одном аккаунте создавать несколько мерчантов?">Можно ли в одном аккаунте создавать несколько мерчантов?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="index.html#23d25a113c" class="toc-h1 toc-link" data-title="Термины и сокращения">Термины и сокращения</a>
+          </li>
+          <li>
+            <a href="index.html#4eebe34e31" class="toc-h1 toc-link" data-title="Начало работы">Начало работы</a>
+          </li>
+          <li>
+            <a href="index.html#2ce6004053" class="toc-h1 toc-link" data-title="Формат взаимодействия">Формат взаимодействия</a>
+          </li>
+          <li>
+            <a href="index.html#cc3c662d69" class="toc-h1 toc-link" data-title="Аутентификация запросов">Аутентификация запросов</a>
+          </li>
+          <li>
+            <a href="index.html#api-public-apikey" class="toc-h1 toc-link" data-title="Api public (не требует apikey)">Api public (не требует apikey)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="index.html#4095a3f6c0" class="toc-h2 toc-link" data-title="Получить актуальные полезные данные для построения запросов">Получить актуальные полезные данные для построения запросов</a>
+                  </li>
+                  <li>
+                    <a href="index.html#b3767ca6e0" class="toc-h2 toc-link" data-title="Получить список доступных ассетов">Получить список доступных ассетов</a>
+                  </li>
+                  <li>
+                    <a href="index.html#uid" class="toc-h2 toc-link" data-title="Получить транзакцию по uid">Получить транзакцию по uid</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="index.html#api-apikey" class="toc-h1 toc-link" data-title="Api (обязательно apikey)">Api (обязательно apikey)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="index.html#10919a3e4b" class="toc-h2 toc-link" data-title="Получить данные мерчанта">Получить данные мерчанта</a>
+                  </li>
+                  <li>
+                    <a href="index.html#ba46a90427" class="toc-h2 toc-link" data-title="Получить суммарные балансы мерчанта по всем кошелькам">Получить суммарные балансы мерчанта по всем кошелькам</a>
+                  </li>
+                  <li>
+                    <a href="index.html#8c509e8af1" class="toc-h2 toc-link" data-title="Получить пендинги ассетов всех мерчантов">Получить пендинги ассетов всех мерчантов</a>
+                  </li>
+                  <li>
+                    <a href="index.html#65a3fc4762" class="toc-h2 toc-link" data-title="Получить настройки ассетов">Получить настройки ассетов</a>
+                  </li>
+                  <li>
+                    <a href="index.html#3f58bc3161" class="toc-h2 toc-link" data-title="Получить кошельки с балансами и пендингами мерчанта">Получить кошельки с балансами и пендингами мерчанта</a>
+                  </li>
+                  <li>
+                    <a href="index.html#88c96a753d" class="toc-h2 toc-link" data-title="Получть транзакции юзера по фильтрам">Получть транзакции юзера по фильтрам</a>
+                  </li>
+                  <li>
+                    <a href="index.html#8712920e50" class="toc-h2 toc-link" data-title="Создать вывод с внутреннеего адреса">Создать вывод с внутреннеего адреса</a>
+                  </li>
+                  <li>
+                    <a href="index.html#d5892aeab0" class="toc-h2 toc-link" data-title="Создать платёж">Создать платёж</a>
+                  </li>
+                  <li>
+                    <a href="index.html#af1e60fb60" class="toc-h2 toc-link" data-title="Создать несколько выводов с внутреннего адреса">Создать несколько выводов с внутреннего адреса</a>
+                  </li>
+                  <li>
+                    <a href="index.html#failed" class="toc-h2 toc-link" data-title="Повтор выплаты со статусом Failed">Повтор выплаты со статусом Failed</a>
+                  </li>
+                  <li>
+                    <a href="index.html#cd3acb61cf" class="toc-h2 toc-link" data-title="Отменить вывод">Отменить вывод</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="index.html#bchcode" class="toc-h1 toc-link" data-title="Список bchCode">Список bchCode</a>
+          </li>
+          <li>
+            <a href="index.html#f72cd871a8" class="toc-h1 toc-link" data-title="Статусы">Статусы</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="index.html#payment" class="toc-h2 toc-link" data-title="Payment">Payment</a>
+                  </li>
+                  <li>
+                    <a href="index.html#withdraw" class="toc-h2 toc-link" data-title="Withdraw">Withdraw</a>
+                  </li>
+                  <li>
+                    <a href="index.html#diposit" class="toc-h2 toc-link" data-title="Diposit">Diposit</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="index.html#callback-url" class="toc-h1 toc-link" data-title="Callback url">Callback url</a>
+          </li>
+          <li>
+            <a href="index.html#681b5ae3d2" class="toc-h1 toc-link" data-title="Ошибки">Ошибки</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='../../../index.html' target="_blank">AlfaBit Group</a></li>
+            <li>Все права защищены.</li>
+            <li>© 2018 - 2022</li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='changelog'>Changelog</h1><h2 id='2022-12-12'>2022-12-12</h2>
+<ul>
+<li>Добавлен список эндпоинтов для API</li>
+</ul>
+<h1 id='faq'>FAQ</h1><h2 id='alfabit-pay'>Что такое AlfaBit.Pay?</h2>
+<ul>
+<li><strong>AlfaBit.Pay</strong>  - это простой и быстрый сервис приема платежей в криптовалюте. Наш сервис может принимать и обрабатывать 1800 криптовалют. Все что вам нужно для начала использование нашей системой - это зарегистрироваться. Мы ценим ваше время и поэтому процесс от регистрации, до получения первых платежей займет несколько минут.</li>
+</ul>
+<h2 id='alfabit-pay-2'>Как работает AlfaBit.Pay?</h2>
+<ul>
+<li>Функционал <strong>AlfaBit.Pay</strong> позволяет выставлять вашим клиентам выставлять счета в виде одноразовых кошельков и аккумулировать на постоянный адрес актива. Полученные средства вы можете хранить в системе или же сразу выводить на ваш личный кошелек.</li>
+</ul>
+<h2 id='ef0bff9c34'>Как долго обрабатывается транзакция?</h2>
+<ul>
+<li>Скорость обработки колеблется в зависимости от того, сколько времени требуется для появления блока в сети. Большинство заказов обрабатываются всего за 1-2 минуты. Обработка BTC может занять немного больше времени, в зависимости от размера вашей транзакции и емкости блока.</li>
+</ul>
+<h2 id='6640d5e2e8'>Что такое хэш транзакции?</h2>
+<ul>
+<li>Хэш транзакции - это уникальный идентификационный код, который регистрирует каждую транзакцию в блокчейне. Этот уникальный код позволяет вам проверить его статус и действительность в блокчейне.</li>
+</ul>
+<h2 id='c33171beef'>Можно ли в одном аккаунте создавать несколько мерчантов?</h2>
+<ul>
+<li>Можно! Для удобства использования, вы можете создавать множество мерчантов (проектов) и управлять ими, причем адреса постоянных кошельков актива будут разными у каждого мерчанта.</li>
+</ul>
+<h1 id='23d25a113c'>Термины и сокращения</h1>
+<p><strong>API ключ</strong> — случайная хэшированная строка для авторизации пользователя в API согласно стандарту Alpha Numeric 256-bit API Key.</p>
+
+<p><strong>API: Application Programming Interface</strong> — набор готовых методов, предоставляемых приложением (системой) для использования во внешних программных продуктах.</p>
+
+<p><strong>REST: Representational State Transfer</strong> — архитектурный стиль взаимодействия компонентов распределённого приложения в сети.</p>
+
+<p><strong>JSON: JavaScript Object Notation</strong> — текстовый формат обмена данными, основанный на JavaScript RFC 7159.</p>
+
+<p><strong>Asset</strong> — цифровой актив на блокчейне.</p>
+
+<p><strong>Merchant</strong> — проект пользователя с адресами постоянных кошельков.</p>
+<h1 id='4eebe34e31'>Начало работы</h1>
+<p>Чтобы начать работу с AlfaBit.Pay, выполните следующие шаги.</p>
+
+<p><strong>Шаг 1. Получите доступ к личному кабинету</strong></p>
+
+<p>Регистрация не займёт много времени, помните о безопасности и всегда используйте двухфаторную аутентификацию!</p>
+
+<p><strong>Шаг 2. Создайте мерчанта</strong></p>
+
+<p>После того как Вы вошли в личный кабинет, нажмите на кнопку &quot;Создать мерчант&quot; и задайте название мерчанту.</p>
+
+<p><strong>Шаг 3. Выпустите ключ доступа к API</strong></p>
+
+<p>Ключ доступа к API используется для взаимодействия с API. Выпустите ключ API в Личном кабинете в разделе Настройки.</p>
+
+<p><strong>Шаг 4. Начинайте взаимодействие с API</strong></p>
+
+<p>Теперь Вам доступен весь фукнционал API AlfaBit.Pay, изучите документацию и начинайте интеграцию.</p>
+<h1 id='2ce6004053'>Формат взаимодействия</h1>
+<p>URL-адрес для вызова API:</p>
+
+<p><code>https://pay.alfabit.org</code></p>
+
+<p>Имеется 2 группы роутов:</p>
+
+<ul>
+<li><strong>/public</strong>  запросы публичных данных сервиса</li>
+<li><p><strong>/api</strong> запросы с использованием api key</p></li>
+<li><p>Методы API вызываются через HTTP-запросы. Параметры методов помещаются в JSON-тело запроса. В GET-запросах параметры помещаются в URL запроса.</p></li>
+<li><p>API всегда возвращает ответ в формате JSON.</p></li>
+<li><p>Структура запроса: <code>/:group/:endpoint</code> где <code>group</code> это одна из групп роутов, а <code>endpoint</code> это метод/эндпоинт в роутах</p></li>
+</ul>
+<h1 id='cc3c662d69'>Аутентификация запросов</h1>
+<p>Роут <code>/api</code> доступен с использованием apikey</p>
+
+<p><code>apikey</code> создается в личном кабинете (вкладка settings), для прикрепления apikey к запросу можно использовать <code>GET</code> или <code>body</code> поле <code>apikey</code>, или <code>headers</code> поле <code>x-access-apikey</code></p>
+
+<blockquote>
+<p>Для авторизации используйте этот код:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"method"</span><span class="p">,</span> 
+                            <span class="s">"api_endpoint_here"</span><span class="p">,</span> 
+                            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                              <span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span>
+                            <span class="p">})</span>
+
+<span class="n">или</span> 
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"method"</span><span class="p">,</span> 
+                            <span class="s">"api_endpoint_here?apikey=your_api_key"</span>
+                            <span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="nt">-X</span> POST <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s2">"x-access-apikey"</span>: <span class="s2">"your_api_key"</span>
+
+или
+
+curl <span class="s2">"api_endpoint_here?apikey=your_api_key"</span>
+
+</code></pre></div>
+<blockquote>
+<p>Замените <code>your_api_key</code> своим API key.</p>
+</blockquote>
+
+<p><code>x-access-apikey: your_api_key</code></p>
+
+<aside class="warning">
+Если в запросе не передан заголовок с данными аутентификации или переданы неверные данные, система вернет HTTP-статус 401 – Unauthorized.
+</aside>
+
+<aside class="notice">
+API ключ используется для обеспечения безопасности. Он должен храниться в защищенном месте.
+</aside>
+<h1 id='api-public-apikey'>Api public (не требует apikey)</h1><h2 id='4095a3f6c0'>Получить актуальные полезные данные для построения запросов</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/public/getInfo"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/public/getInfo"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"isServiceEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bchList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"BTCTEST"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ETH"</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"lastBlocksNumbers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BTCTEST"</span><span class="p">:</span><span class="w"> </span><span class="mi">2226018</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="mi">14800211</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"nativeUsdPrices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BTCTEST"</span><span class="p">:</span><span class="w"> </span><span class="mf">29012.46</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="mi">1960</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"gasPrices"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BTCTEST"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.375</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="mi">65803004938</span><span class="p">,</span><span class="w">
+           </span><span class="err">...</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BTCTEST"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+           </span><span class="err">...</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения полезных данных для построения запросов</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/public/getInfo</code></p>
+<h2 id='b3767ca6e0'>Получить список доступных ассетов</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/public/getAssetsList"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/public/getAssetsList"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"native"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"changePrice24Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.417</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netFeeButch"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00055</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netFeeOne"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00055</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minDeposit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chainId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"imgUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ru.brokers.best/upload/images/2021/01/756589c78caf5bc7b8857d68839f21de.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1218.57</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bchFullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chainIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ru.brokers.best/upload/images/2021/01/756589c78caf5bc7b8857d68839f21de.png"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"chainId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x111111111117dC0aa78b770fA6A738034120C302"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1inch"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1INCH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logoURI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"bridgeInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"137"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"tokenAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9c2C5fd7b07E95EE044DDeba0E97a665F142394f"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"42161"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"tokenAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1INCH-ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"imgUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.coingecko.com/coins/images/13469/thumb/1inch-token.png?1608803028"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"changePrice24Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.792</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bchFullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chainIcon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ru.brokers.best/upload/images/2021/01/756589c78caf5bc7b8857d68839f21de.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.405</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netFeeOne"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netFeeButch"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minDeposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения списка доступных ассетов</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/public/getAssetsList</code></p>
+<h2 id='uid'>Получить транзакцию по uid</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/public/getTransactionByUid?uid=ac9e5296-c4b6-4620-9f91-7d6b15d9a94d"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/public/getTransactionByUid?uid=ac9e5296-c4b6-4620-9f91-7d6b15d9a94d"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tx"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2668</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d371ce82-16b7-420d-8fbc-e585773816d6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xf7f0ab639745c717fdc5ad7d66309cc32d3c6059"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1672222736</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payDeadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">1672224536</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waitDeposit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"netFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serviceFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountUsdEq"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAXC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tokenCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cbUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isDone"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isPayRecovered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_id_2638273"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"publicComment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUseCb"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"warn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"txHashIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"txHashSent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apiMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"wdSender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actorAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"MerchantId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RomanBlockchain"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения транзакции по uid</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/public/getTransactionByUid?uid=ac9e5296-c4b6-4620-9f91-7d6b15d9a94d</code></p>
+<h3 id='6744ad4c7a'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>uid</strong></td>
+<td>да</td>
+<td>uid транзакции</td>
+</tr>
+</tbody></table>
+<h1 id='api-apikey'>Api (обязательно apikey)</h1><h2 id='10919a3e4b'>Получить данные мерчанта</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getMerchant?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/getMerchant?apikey=your_api_key"</span> 
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e093318-8e78-402a-95fb-55fa1c80e940"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test merch"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tarif"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"starter"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxCountAssetsAddresses"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"mainInternalAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BNB"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x8AdC89657badbF6961A0F92CD0595E837a4D2652"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc1qs5p3fn26rntdfngwxp36zygmpfp65vxpw3mtu8"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1ED716357247638e524f9E1B49a4a5BFc425fD4f"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"TRX"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAK6uYjznVsQ5iNpjdeYYhcUanBWqYJWG9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"XRP-BSC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x5D28e67EaFa32e6D81386938264E29c154B322ab"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"BUSD-BSC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x9eE32f453A96027277af2ea498FE23d44820bDA8"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"USDC-ETH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xea2D1e73C9A2426eC8CdF7a3f9e3cb2fC20713a9"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"USDT-BSC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x61bdCCC4fd31493C8D7da567a8ea7B4CeEFB6439"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"USDT-ETH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x07AF7Cc1Af9bdac93bfCAF82760601Fc6e372632"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"USDT-TRX"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TS32fXKbqSRgadFwgcpm9kxTd2kZ7mUufJ"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"assetsList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"BNB"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"USDT-ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"USDT-BSC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"USDC-ETH"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"BUSD-BSC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"TRX"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"USDT-TRX"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"XRP-BSC"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1671300774</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"assetsSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"secretKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"defaultCb"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isSingle0xWallet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения данных мерчанта</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/getMerchant?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-2'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+</tbody></table>
+<h2 id='ba46a90427'>Получить суммарные балансы мерчанта по всем кошелькам</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getMerchantBalances?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/user/getMerchantBalances?apikey=your_api_key"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"pendingWithdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"pendingPayment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения суммарных балансов мерчанта по всем кошелькам</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/user/getMerchantBalances?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-3'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+</tbody></table>
+<h2 id='8c509e8af1'>Получить пендинги ассетов всех мерчантов</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getMerchantPendings?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/user/getMerchantPendings?apikey=your_api_key"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+          </span><span class="nl">"merchId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"assetsPendingsPayments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"USDT"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">},</span><span class="w">
+          </span><span class="nl">"assetsPendingsWithdraws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.3</span><span class="p">},</span><span class="w">
+          </span><span class="nl">"addressPendingsWithdraws"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nl">"BTC-ETH"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="p">}},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения пендингов ассетов всех мерчантов</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/user/getMerchantPendings?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-4'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+</tbody></table>
+<h2 id='65a3fc4762'>Получить настройки ассетов</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getAssetsSettings?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/getAssetsSettings?apikey=your_api_key"</span> 
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"USDT-MATIC"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sendMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"immediately"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUseExternal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lifeTimeMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delayBatchWdsMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcda54"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalAddressXrpTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"DAI-ETH"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sendMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"immediately"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isUseExternal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lifeTimeMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delayBatchWdsMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xcda54"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"externalAddressXrpTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения данных мерчанта</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/getAssetsSettings?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-5'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+<tr>
+<td><strong>merchUid</strong></td>
+<td>да</td>
+<td>uid мерчанта</td>
+</tr>
+</tbody></table>
+<h2 id='3f58bc3161'>Получить кошельки с балансами и пендингами мерчанта</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getMerchantWallets?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/getMerchantWallets?apikey=your_api_key"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ac9e5296-c4b6-4620-9f91-7d6b15d9a94d"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"assetCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc1qs5p3fn26rntdfngwxp36zygmpfp65vxpw3mtu8"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pendingWd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"ETH"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdf7fcb1-bb3d-45a0-abd2-f94963308f41"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"assetCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1ED716357247638e524f9E1B49a4a5BFc425fD4f"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isVisible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"pendingWd"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+            </span><span class="err">....</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения кошельков с балансами и пендингами мерчанта</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/getMerchantWallets?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-6'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+</tbody></table>
+<h2 id='88c96a753d'>Получть транзакции юзера по фильтрам</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/getTransactions?apikey=your_api_key"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pay.alfabit.org/api/getTransactions?apikey=your_api_key"</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">305</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f53b8c46-ff18-479f-95e0-3773ec9a3c61"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1qgd3ccuet3z24k5s2y0nx386ru24cycy2k98fw4"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1671851626</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payDeadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000064875</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"netFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000005225000000000001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"serviceFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amountUsdEq"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.092051255</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCTEST"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tokenCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-test"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cbUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isDone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isPayRecovered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isUseCb"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"warn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txHashIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txHashSent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75b87d3334e94ad7a06fff6f2b076faa70f57ab6129fb0e518d519d384bdc37a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"blockNumberIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"blockNumberSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"apiMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"wdSender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"actorAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1q56luwps0ckwrz6gqxsmdnfa8ssc3yaqekacezu"</span><span class="p">,</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+          </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения транзакций юзера по фильтрам</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET</code></p>
+
+<p><code>https://pay.alfabit.org/api/getTransactions?apikey=your_api_key</code></p>
+<h3 id='6744ad4c7a-7'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+<tr>
+<td><strong>offset</strong></td>
+<td>нет</td>
+<td>Смещение элементов</td>
+</tr>
+<tr>
+<td><strong>limit</strong></td>
+<td>нет</td>
+<td>Кол-во элементов на странице</td>
+</tr>
+<tr>
+<td><strong>bchCode</strong></td>
+<td>нет</td>
+<td>Код блокчейн (&#39;ETH&#39;, &#39;BTC&#39;, &#39;BSC&#39;, &#39;AVAXC&#39;, &#39;MATIC&#39;, &#39;FTM&#39;, &#39;BTCTEST&#39;, &#39;TRX&#39;, &#39;LTC&#39;, &#39;BCH&#39;, &#39;XRP&#39;, &#39;TON)</td>
+</tr>
+<tr>
+<td><strong>tokenCode</strong></td>
+<td>нет</td>
+<td>Код токена</td>
+</tr>
+<tr>
+<td><strong>status</strong></td>
+<td>нет</td>
+<td>Статус транзакции (&#39;waitDeposit&#39;, &#39;waitConfirmation&#39;, &#39;fail&#39;, &#39;success&#39;, &#39;pending&#39;, &#39;unknown&#39;)</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>нет</td>
+<td>Тип транзакции (&#39;payment&#39;, &#39;deposit&#39;, &#39;withdraw&#39;)</td>
+</tr>
+<tr>
+<td><strong>searchKey</strong></td>
+<td>нет</td>
+<td>???</td>
+</tr>
+<tr>
+<td><strong>uid</strong></td>
+<td>нет</td>
+<td>Uid мерчанта</td>
+</tr>
+<tr>
+<td><strong>period</strong></td>
+<td>нет</td>
+<td>Время в секундах (now - 300, вернет за последние 5 минут)</td>
+</tr>
+</tbody></table>
+<h2 id='8712920e50'>Создать вывод с внутреннеего адреса</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/createWithdraw"</span><span class="p">,</span>
+                         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span><span class="p">},</span>
+                         <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"code"</span><span class="p">:</span> <span class="s">"BTC-TEST"</span><span class="p">,</span>
+                               <span class="s">"amount"</span><span class="p">:</span> <span class="s">"some comments"</span><span class="p">,</span>
+                               <span class="s">"cbUrl"</span><span class="p">:</span> <span class="s">"https://cb.domain.com?id=2323"</span><span class="p">,</span>
+                               <span class="s">"comment"</span><span class="p">:</span> <span class="s">"some comments"</span><span class="p">,</span>
+                               <span class="s">"addressTo"</span><span class="p">:</span> <span class="s">"bc1qs2xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg"</span><span class="p">,</span>
+                               <span class="s">"memoTag"</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                               <span class="s">"sender"</span><span class="p">:</span> <span class="bp">None</span><span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://pay.alfabit.org/api/createWithdraw"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'{"x-access-apikey": "your_api_key"}'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{"code": "BTC-TEST",
+          "amount": "some comments",
+          "cbUrl": "https://cb.domain.com?id=2323",
+          "comment": "some comments",
+          "addressTo": "bc1qs2xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg",
+          "memoTag": None,
+          "sender": None}'</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">305</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f53b8c46-ff18-479f-95e0-3773ec9a3c61"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1qgd3ccuet3z24k5s2y0nx386ru24cycy2k98fw4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1671851626</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"payDeadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000064875</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000005225000000000001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"serviceFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amountUsdEq"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.092051255</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCTEST"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tokenCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cbUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isDone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isPayRecovered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isUseCb"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"warn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txHashIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"txHashSent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75b87d3334e94ad7a06fff6f2b076faa70f57ab6129fb0e518d519d384bdc37a"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"blockNumberIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"blockNumberSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"apiMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"wdSender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"actorAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1q56luwps0ckwrz6gqxsmdnfa8ssc3yaqekacezu"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для получения платежных заявок юзера</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST</code></p>
+
+<p><code>https://pay.alfabit.org/api/createWithdraw</code></p>
+<h3 id='6744ad4c7a-8'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+<tr>
+<td><strong>code</strong></td>
+<td>да</td>
+<td>Код валюты</td>
+</tr>
+<tr>
+<td><strong>amount</strong></td>
+<td>да</td>
+<td>Сумма к отправке</td>
+</tr>
+<tr>
+<td><strong>cbUrl</strong></td>
+<td>нет</td>
+<td>Callback URL куда отправить ответ</td>
+</tr>
+<tr>
+<td><strong>comment</strong></td>
+<td>нет</td>
+<td>Комментарии</td>
+</tr>
+<tr>
+<td><strong>addressTo</strong></td>
+<td>да</td>
+<td>Адрес куда отправить</td>
+</tr>
+<tr>
+<td><strong>memoTag</strong></td>
+<td>нет</td>
+<td>Мемо тэг</td>
+</tr>
+<tr>
+<td><strong>sender</strong></td>
+<td>нет</td>
+<td>Отправитель</td>
+</tr>
+</tbody></table>
+<h2 id='d5892aeab0'>Создать платёж</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/createPayment"</span><span class="p">,</span>
+                         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span><span class="p">},</span>
+                         <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"code"</span><span class="p">:</span> <span class="s">"USDT-ETH"</span><span class="p">,</span>
+                               <span class="s">"comment"</span><span class="p">:</span> <span class="s">"some comments"</span><span class="p">,</span>
+                               <span class="s">"cbUrl"</span><span class="p">:</span> <span class="s">"https://cb.domain.com?id=2323"</span><span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://pay.alfabit.org/api/createPayment"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'{"x-access-apikey": "your_api_key"}'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{"code":"https://test.com/test", 
+          "comment": "some comments", 
+          "cbUrl": "https://cb.domain.com?id=2323"}'</span>
+</code></pre></div>
+<p>Эндпоинт предназначен для создания платежа</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST</code></p>
+
+<p><code>https://pay.alfabit.org/api/createPayment</code></p>
+<h3 id='6744ad4c7a-9'>Параметры</h3>
+<table><thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>apikey</strong></td>
+<td>да</td>
+<td>API ключ</td>
+</tr>
+<tr>
+<td><strong>code</strong></td>
+<td>да</td>
+<td>Код валюты</td>
+</tr>
+<tr>
+<td><strong>comment</strong></td>
+<td>да</td>
+<td>Комментарии</td>
+</tr>
+<tr>
+<td><strong>cbUrl</strong></td>
+<td>да</td>
+<td>Callbakc URL куда сервис отправит ответ, если депозит совершен, будет пытаться переодически, пока не получит code 200 OK</td>
+</tr>
+</tbody></table>
+<h2 id='af1e60fb60'>Создать несколько выводов с внутреннего адреса</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/bulkCreateWithdaws"</span><span class="p">,</span>
+                         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span><span class="p">},</span>
+                         <span class="n">json</span><span class="o">=</span><span class="p">[{</span><span class="s">"code"</span><span class="p">:</span> <span class="s">"BTC-TEST"</span><span class="p">,</span>
+                                 <span class="s">"amount"</span><span class="p">:</span> <span class="s">"0.2"</span><span class="p">,</span>
+                                 <span class="s">"cbUrl"</span><span class="p">:</span> <span class="s">"https://cb.domain.com?id=2323"</span><span class="p">,</span>
+                                 <span class="s">"comment"</span><span class="p">:</span> <span class="s">"some comments"</span><span class="p">,</span>
+                                 <span class="s">"addressTo"</span><span class="p">:</span> <span class="s">"bc1qs3xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg"</span><span class="p">,</span>
+                                 <span class="s">"memoTag"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                                 <span class="s">"sender"</span><span class="p">:</span> <span class="n">null</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s">"code"</span><span class="p">:</span> <span class="s">"BTC-TEST"</span><span class="p">,</span>
+                                 <span class="s">"amount"</span><span class="p">:</span> <span class="s">"0.1"</span><span class="p">,</span>
+                                 <span class="s">"cbUrl"</span><span class="p">:</span> <span class="s">"https://cb.domain.com?id=2323"</span><span class="p">,</span>
+                                 <span class="s">"comment"</span><span class="p">:</span> <span class="s">"some comments"</span><span class="p">,</span>
+                                 <span class="s">"addressTo"</span><span class="p">:</span> <span class="s">"bc1qs2xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg"</span><span class="p">,</span>
+                                 <span class="s">"memoTag"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+                                 <span class="s">"sender"</span><span class="p">:</span> <span class="n">null</span><span class="p">}])</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-x</span> POST <span class="s2">"https://pay.alfabit.org/api/bulkCreateWithdaws"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'{"x-access-apikey": "your_api_key"}'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'[{"code": "BTC-TEST",
+           "amount": "0.2",
+           "cbUrl": "https://cb.domain.com?id=2323",
+           "comment": "some comments",
+           "addressTo": "bc1qs3xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg",
+           "memoTag": null,
+           "sender": null},
+          {"code": "BTC-TEST",
+           "amount": "0.1",
+           "cbUrl": "https://cb.domain.com?id=2323",
+           "comment": "some comments",
+           "addressTo": "bc1qs2xccfskt5rfz5fhez5vdmwh2dc23lwqanmexg",
+           "memoTag": null,
+           "sender": null}]'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">305</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f53b8c46-ff18-479f-95e0-3773ec9a3c61"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1qgd3ccuet3z24k5s2y0nx386ru24cycy2k98fw4"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1671851626</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payDeadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000064875</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"netFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000005225000000000001</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"serviceFee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amountUsdEq"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.092051255</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdraw"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"bchCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCTEST"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tokenCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-test"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"cbUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isDone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isPayRecovered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isUseCb"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"warn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"isNative"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txHashIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"txHashSent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75b87d3334e94ad7a06fff6f2b076faa70f57ab6129fb0e518d519d384bdc37a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timeIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"blockNumberIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"blockNumberSent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"apiMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ui"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"wdSender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"actorAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tb1q56luwps0ckwrz6gqxsmdnfa8ssc3yaqekacezu"</span><span class="p">,</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"Invalid recipient address"</span><span class="p">,</span><span class="w">
+</span><span class="p">{</span><span class="err">...tx</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для создания несколько выводов с внутреннего адреса</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST</code></p>
+
+<p><code>https://pay.alfabit.org/api/bulkCreateWithdaws</code></p>
+<h2 id='failed'>Повтор выплаты со статусом Failed</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/repeatFailedWithdraw"</span><span class="p">,</span>
+                         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span><span class="p">},</span>
+                         <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"wdUid"</span><span class="p">:</span> <span class="s">"123"</span><span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-x</span> POST <span class="s2">"https://pay.alfabit.org/api/repeatFailedWithdraw"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'{"x-access-apikey": "your_api_key"}'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{"apikey": "xxxx",
+          "wdUid": "123"}'</span>
+</code></pre></div>
+<blockquote>
+<p>Пример ответа:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Withdraw recovered"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для повтора выплаты со статусом Failed</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST</code></p>
+
+<p><code>https://pay.alfabit.org/api/repeatFailedWithdraw</code></p>
+<h2 id='cd3acb61cf'>Отменить вывод</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://pay.alfabit.org/api/cancelWithdraw"</span><span class="p">,</span>
+                         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"x-access-apikey"</span><span class="p">:</span> <span class="s">"your_api_key"</span><span class="p">},</span>
+                         <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"wdUid"</span><span class="p">:</span> <span class="s">"123"</span><span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-x</span> POST <span class="s2">"https://pay.alfabit.org/api/cancelWithdraw"</span> <span class="se">\</span>
+     <span class="nt">-H</span> <span class="s1">'{"x-access-apikey": "your_api_key"}'</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s1">'{"wdUid": "123"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Withdraw canceled"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Эндпоинт предназначен для отмены вывода средств</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST</code></p>
+
+<p><code>https://pay.alfabit.org/api/cancelWithdraw</code></p>
+<h1 id='bchcode'>Список bchCode</h1>
+<p>В AlfaBit.Pay используются следующие блокчейн коды:</p>
+
+<p><strong>ETH</strong>, <strong>BTC</strong>, <strong>BSC</strong>, <strong>AVAXC</strong>, <strong>MATIC</strong>, <strong>FTM</strong>, <strong>BTCTEST</strong>, <strong>TRX</strong>, <strong>LTC</strong>, <strong>BCH</strong>, <strong>XRP</strong>, <strong>TON</strong></p>
+<h1 id='f72cd871a8'>Статусы</h1><h2 id='payment'>Payment</h2>
+<p><strong>waitDeposit</strong></p>
+
+<p>Создана заявка и ожидает пополнения</p>
+
+<p><strong>waitConfirmation</strong></p>
+
+<p>Включено в блок, ожидается заданное количество подтверждений</p>
+
+<p><strong>success</strong></p>
+
+<p>Получено необходимое количество подтверждений</p>
+<h2 id='withdraw'>Withdraw</h2>
+<p><strong>pending</strong></p>
+
+<p>Ждёт отправки или добавления в мемпул.</p>
+
+<p><strong>unknown</strong></p>
+
+<p>Неизвестный статус. Требуется вмешательство оператора</p>
+
+<p><strong>canceled</strong></p>
+
+<p>Сброшено через метод cancelWithdraw</p>
+
+<p><strong>fail</strong></p>
+
+<p>Неудача, транзакция не прията чейном</p>
+
+<p><strong>success</strong></p>
+
+<p>Получено необходимое количество подтверждений</p>
+<h2 id='diposit'>Diposit</h2>
+<p><strong>success</strong></p>
+
+<p>Получено необходимое количество подтверждений</p>
+<h1 id='callback-url'>Callback url</h1>
+<p>Поле <strong>cbUrl</strong> хранит урл по которому будут производиться оповещения об изменениях статусов заявки на ввод и вывод. Вызывается <strong>POST</strong> с <strong>body</strong>:</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">    
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tokenCode"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="err">number</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"txHashSent"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+      </span><span class="nl">"isRecovered"</span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="w">
+      </span><span class="nl">"warn"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+      </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>signature</strong> это хеш sha256 в формате hex конкатенации <strong>id + comment + tokenCode + amount + status + secretKey</strong>, 
+где secretKey это ключ подписи, который можно получить в личном кабинете юзера. Пример nodejs:</p>
+
+<p><code>import crypto from &#39;crypto&#39;</code></p>
+
+<p><code>const signature = crypto.createHash(&#39;sha256&#39;).update(id + comment + tokenName + String(amount) + status + (secretKey || &#39;&#39;)).digest(&#39;hex&#39;)</code></p>
+<h1 id='681b5ae3d2'>Ошибки</h1>
+<p>AlfaBit Pay API использует следующие коды ошибок:</p>
+
+<table><thead>
+<tr>
+<th>Код ошибки</th>
+<th>Описание</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>400</strong></td>
+<td>Bad Request -- Ваш запрос некорректен</td>
+</tr>
+<tr>
+<td><strong>401</strong></td>
+<td>Unauthorized -- Ваш API ключ недействителен</td>
+</tr>
+<tr>
+<td><strong>403</strong></td>
+<td>Forbidden -- Отсутствует доступ для данного эндпоинта</td>
+</tr>
+<tr>
+<td><strong>404</strong></td>
+<td>Not Found -- Несуществующий запрос</td>
+</tr>
+<tr>
+<td><strong>405</strong></td>
+<td>Method Not Allowed -- Неверный метод для эндпоинта</td>
+</tr>
+<tr>
+<td><strong>429</strong></td>
+<td>Too Many Requests -- Слишком много запросов</td>
+</tr>
+<tr>
+<td><strong>500</strong></td>
+<td>Internal Server Error -- Проблема на стороне сервера. Попробуйте позже</td>
+</tr>
+<tr>
+<td><strong>503</strong></td>
+<td>Service Unavailable -- Сервер на техническом обслуживании. Попробуйте позже</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="index.html#" data-language-name="shell">shell</a>
+                <a href="index.html#" data-language-name="python">python</a>
+                <a href="index.html#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  <script>(function(){var js = "window['__CF$cv$params']={r:'7d9b2dc208a295eb',m:'_xXFXtDrPHHifPXlPv7jiaTgsAsaQPmc5n1nhPJxBH0-1687171489-0-AcLd6120sqI/XVLnd/I/4/k20NhRMIRwFtDEHRvqX70J'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
